@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, SimSun, sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, SimSun, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+#app {
+  height: 100%;
+}
+
+ul,
+li,
+ol {
+  list-style: none outside none;
+}
+
+// input 和 botton 的设置
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: normal;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input::-webkit-outer-spin-button {
+  height: auto;
+  -webkit-appearance: none;
+}
+
+// input 的 placeholder 设置
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #cccccc;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+input[type='button'] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+// 处理滚动条
+::-webkit-scrollbar {
+  width: 4px;
+  height: 0.1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.2);
+}

@@ -1,5 +1,15 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 
-createApp(App).mount('#app')
+// vue 全家桶
+import router from './router';
+import pinia from './pinia';
+
+// 自适应
+import './utils/scale-1920.js';
+
+const app = createApp(App);
+
+app.use(router).use(pinia);
+
+app.mount('#app');
