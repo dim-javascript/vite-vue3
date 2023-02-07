@@ -7,10 +7,11 @@ import vue from '@vitejs/plugin-vue';
 // })
 
 export default defineConfig(({ command, mode }) => {
+  /*
+   * command: 在开发环境下 command 的值为 serve，而在生产环境下为 build。
+   */
   const root = process.cwd();
   const env = loadEnv(mode, root);
-
-  console.log('env', env);
 
   return {
     base: env.VITE_APP_BASE + '/',
@@ -21,16 +22,5 @@ export default defineConfig(({ command, mode }) => {
       // 对文件路径进行修改
       alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }],
     },
-
-    // // css 预编译
-    // css: {
-    //   // 指定传递给 CSS 预处理器的选项
-    //   preprocessorOptions: {
-    //     // 在 vite 中配置一般预处理只处理变量文件
-    //     scss: {
-    //       additionalData: `@import './src/scss/variable/index.scss';`,
-    //     },
-    //   },
-    // },
   };
 });

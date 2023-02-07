@@ -5,11 +5,6 @@ const BASE = config.base;
 
 const projectRoutes = [];
 
-// 404 页面
-const notFoundPage = {
-  path: '/:pathMatch(.*)',
-};
-
 /**
  * 自动导入modules文件夹下的路由
  */
@@ -24,7 +19,8 @@ for (const key in modules) {
 
 const routes = [
   {
-    path: ``,
+    path: `${BASE}`,
+    component: () => import('@/views/layout/index.vue'),
   },
   {
     path: `${BASE}/login`,
@@ -32,6 +28,11 @@ const routes = [
     mate: {
       title: '登录',
     },
+  },
+  // 404 页面
+  {
+    path: '/:pathMatch(.*)',
+    redirect: `${BASE}/not-found`,
   },
   {
     path: `${BASE}/not-found`,
