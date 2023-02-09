@@ -21,6 +21,7 @@ const routes = [
   {
     path: `${BASE}`,
     component: () => import('@/views/layout/index.vue'),
+    children: [...projectRoutes],
   },
   {
     path: `${BASE}/login`,

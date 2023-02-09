@@ -1,12 +1,21 @@
+import _ from 'lodash';
+
 const menuList = [
   {
-    id: 1,
     name: '首页',
+    path: '',
   },
   {
-    id: 2,
+    name: '组件的调试',
+  },
+  {
     name: '系统管理',
   },
-];
+].map((item) => {
+  return {
+    ...item,
+    id: _.uniqueId(),
+  };
+});
 
 export default { menuList };
