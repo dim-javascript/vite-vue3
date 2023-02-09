@@ -6,16 +6,29 @@ const menuList = [
     path: '',
   },
   {
-    name: '组件的调试',
+    name: '事例页面',
+    children: [
+      {
+        name: '页面1',
+        path: '',
+      },
+    ],
   },
   {
     name: '系统管理',
   },
-].map((item) => {
-  return {
-    ...item,
-    id: _.uniqueId(),
-  };
-});
+];
+
+// 设置唯一的 id 值
+function setUuIdHandle(list) {
+  list.forEach((element) => {
+    if (element.children && element.children.length > 0) {
+      setUuIdHandle(element.children);
+    }
+    element.id = _.uniqueId('menuId_');
+  });
+}
+
+setUuIdHandle(menuList);
 
 export default { menuList };
