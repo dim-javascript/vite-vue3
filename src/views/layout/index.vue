@@ -13,12 +13,28 @@
             <Fold></Fold>
           </el-icon>
         </div>
+
+        <el-menu
+          :collapse="isCollapse"
+          class="custom-menu-cls"
+          :unique-opened="true"
+        >
+          <menu-bar-item
+            v-for="item in menuList"
+            :key="item.path || item.id"
+            :index="item.path || item.id"
+            :menu-item="item"
+          ></menu-bar-item>
+        </el-menu>
       </div>
 
       <div class="app-body-box__content-box daq-fl daq-fl-column">
         <div class="bread-crumb-custom daq-fl daq-fl-mid"></div>
         <div class="router-content">
-          <router-view></router-view>
+          <router-view v-slot="{ Component, route }">
+            <div>{{ getMsg(Component) }}</div>
+            <!-- <component :is="Component"></component> -->
+          </router-view>
         </div>
       </div>
     </div>
@@ -28,10 +44,15 @@
 <script setup>
 import { ref } from 'vue';
 import { menu } from '@/data/index.js';
-
-console.log('menu', menu);
+import MenuBarItem from './components/menu-bar-item.vue';
 
 const isCollapse = ref(true);
+const menuList = ref([]);
+menuList.value = menu.menuList;
+
+function getMsg(data) {
+  // console.log('data', data);
+}
 </script>
 
 <style lang="scss" scoped>
@@ -51,13 +72,13 @@ const isCollapse = ref(true);
     &__sidebar-box {
       display: grid;
       grid-template-rows: 50px 1fr;
-      border-right: solid 1px var(--el-menu-border-color);
       overflow-x: hidden;
       font-size: 14px;
       &--is-collapse {
         line-height: 60px;
         padding: 0px 20px;
-        border-bottom: 1px solid #e1e5ef;
+        border-right: solid 1px var(--el-menu-border-color);
+        border-bottom: 1px solid var(--el-menu-border-color);
         .is-collapse-icon {
           font-size: 18px;
           cursor: pointer;
@@ -94,6 +115,14 @@ const isCollapse = ref(true);
         overflow-y: auto;
       }
     }
+  }
+}
+
+// 菜单列表的样式
+.custom-menu-cls {
+  --custom-menu-width: 200px;
+  &:not(.el-menu--collapse) {
+    width: var(--custom-menu-width);
   }
 }
 </style>
