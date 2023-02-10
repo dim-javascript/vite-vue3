@@ -1,0 +1,33 @@
+// 菜单栏的样式
+.el-menu--collapse {
+  .el-menu-item [class^='el-icon'],
+  .el-menu-item-group
+    > ul
+    > .el-sub-menu
+    > .el-sub-menu__title
+    [class^='el-icon'],
+  .el-sub-menu > .el-sub-menu__title [class^='el-icon'] {
+    margin: 0;
+    vertical-align: middle;
+    width: var(--el-menu-icon-width);
+    text-align: center;
+  }
+  .el-menu-item-group > ul > .el-sub-menu > .el-sub-menu__title > span,
+  .el-menu-item > span,
+  .el-sub-menu > .el-sub-menu__title > span {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: inline-block;
+  }
+  .el-menu-item .el-sub-menu__icon-arrow,
+  .el-menu-item-group
+    > ul
+    > .el-sub-menu
+    > .el-sub-menu__title
+    .el-sub-menu__icon-arrow,
+  .el-sub-menu > .el-sub-menu__title .el-sub-menu__icon-arrow {
+    display: none;
+  }
+}

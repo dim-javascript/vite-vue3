@@ -13,8 +13,9 @@
             <Fold></Fold>
           </el-icon>
         </div>
-
+        <!-- style="--custom-menu-bg-color: #f5f7fa" -->
         <el-menu
+          active-text-color="#fff"
           :collapse="isCollapse"
           class="custom-menu-cls"
           :unique-opened="true"
@@ -46,7 +47,7 @@ import { ref } from 'vue';
 import { menu } from '@/data/index.js';
 import MenuBarItem from './components/menu-bar-item.vue';
 
-const isCollapse = ref(true);
+const isCollapse = ref(false);
 const menuList = ref([]);
 menuList.value = menu.menuList;
 
@@ -119,10 +120,22 @@ function getMsg(data) {
 }
 
 // 菜单列表的样式
+// star
 .custom-menu-cls {
-  --custom-menu-width: 200px;
+  --custom-menu-width: 180px;
+  --custom-menu-bg-color: var(--el-color-primary);
+
+  overflow-x: hidden;
+  overflow-y: auto;
   &:not(.el-menu--collapse) {
     width: var(--custom-menu-width);
   }
 }
+
+:deep(.custom-menu-cls) {
+  .el-menu-item.is-active {
+    background-color: var(--custom-menu-bg-color);
+  }
+}
+// end
 </style>
