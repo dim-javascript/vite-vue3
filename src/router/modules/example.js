@@ -19,10 +19,18 @@ export default [
       {
         name: 'example-two',
         path: 'two',
-        component: () => import('@/views/example/two.vue'),
-        meta: {
-          title: '事例页面2',
-        },
+        // component: () => import('@/views/example/two.vue'),
+        // meta: {
+        //   title: '事例页面2',
+        // },
+        children: [{
+          name: 'example-two-page-one',
+          path: 'pageOne',
+          component: () => import('@/views/example/two.vue'),
+          meta: {
+            title: '事例页面2/页面1',
+          },
+        }],
       },
     ],
   },

@@ -20,7 +20,12 @@ const menuList = [
       },
       {
         name: '页面2',
-        path: '/example/two',
+        children: [
+          {
+            path: '/example/two/pageOne',
+            name: '页面2/page1',
+          },
+        ],
       },
     ],
   },

@@ -15,6 +15,7 @@
         </div>
         <!-- style="--custom-menu-bg-color: #f5f7fa" -->
         <el-menu
+          :router="true"
           active-text-color="#fff"
           :collapse="isCollapse"
           class="custom-menu-cls"
@@ -32,10 +33,11 @@
       <div class="app-body-box__content-box daq-fl daq-fl-column">
         <div class="bread-crumb-custom daq-fl daq-fl-mid"></div>
         <div class="router-content">
-          <router-view v-slot="{ Component, route }">
+          <router-view></router-view>
+          <!-- <router-view v-slot="{ Component, route }">
             <div>{{ getMsg(Component) }}</div>
-            <!-- <component :is="Component"></component> -->
-          </router-view>
+            <component :is="Component"></component>
+          </router-view> -->
         </div>
       </div>
     </div>
@@ -52,7 +54,7 @@ const menuList = ref([]);
 menuList.value = menu.menuList;
 
 function getMsg(data) {
-  // console.log('data', data);
+  console.log('data', data);
 }
 </script>
 
