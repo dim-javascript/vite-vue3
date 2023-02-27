@@ -1,4 +1,4 @@
-// 菜单栏的样式
+// 菜单栏的样式【由于封装的 菜单子组件必须要求包裹 div 则需要添加样式覆盖】
 .el-menu--collapse {
   .el-menu-item [class^='el-icon'],
   .el-menu-item-group
@@ -29,5 +29,12 @@
     .el-sub-menu__icon-arrow,
   .el-sub-menu > .el-sub-menu__title .el-sub-menu__icon-arrow {
     display: none;
+  }
+}
+
+// 菜单选中后的颜色
+.custom-menu-bg-cls {
+  .el-menu-item.is-active {
+    background-color: var(--custom-menu-bg-color);
   }
 }

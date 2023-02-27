@@ -2,6 +2,7 @@
   <div>
     <!-- 递归 -->
     <el-sub-menu
+      v-bind="options.subMenuConfig || {}"
       v-if="menuItem.children && menuItem.children.length > 0"
       :index="menuItem[indexKey] || menuItem.id"
     >
@@ -40,6 +41,15 @@ export default defineComponent({
     indexKey: {
       type: String,
       default: 'path',
+    },
+    // 适配 element-plus 中的属性
+    options: {
+      type: Object,
+      default: () => {
+        return {
+          subMenuConfig: {},
+        };
+      },
     },
   },
 });

@@ -13,12 +13,10 @@
             <Fold></Fold>
           </el-icon>
         </div>
-        <!-- style="--custom-menu-bg-color: #f5f7fa" -->
         <el-menu
           :router="true"
-          active-text-color="#fff"
           :collapse="isCollapse"
-          class="custom-menu-cls"
+          class="custom-menu-cls custom-menu-bg-cls"
           :unique-opened="true"
         >
           <menu-bar-item
@@ -26,6 +24,11 @@
             :key="item.path || item.id"
             :index="item.path || item.id"
             :menu-item="item"
+            :options="{
+              subMenuConfig: {
+                'popper-class': 'custom-menu-bg-cls',
+              },
+            }"
           ></menu-bar-item>
         </el-menu>
       </div>
@@ -125,18 +128,11 @@ function getMsg(data) {
 // star
 .custom-menu-cls {
   --custom-menu-width: 180px;
-  --custom-menu-bg-color: var(--el-color-primary);
 
   overflow-x: hidden;
   overflow-y: auto;
   &:not(.el-menu--collapse) {
     width: var(--custom-menu-width);
-  }
-}
-
-:deep(.custom-menu-cls) {
-  .el-menu-item.is-active {
-    background-color: var(--custom-menu-bg-color);
   }
 }
 // end

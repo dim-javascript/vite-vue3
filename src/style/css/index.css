@@ -1,0 +1,6 @@
+/* 主题相关的文件样式 */
+@import './theme/default-theme.css';
+@import './theme/custom-theme.css';
+
+/* 变量的样式文件 */
+@import './variable/el-var-cover.css';

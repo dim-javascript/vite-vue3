@@ -1,0 +1,5 @@
+:root {
+  /* 菜单颜色 */
+  --el-menu-active-color: #fff;
+  --custom-menu-bg-color: var(--el-color-primary);
+}
