@@ -7,7 +7,7 @@ const BASE = config.base || '';
 const menuList = [
   {
     name: '首页',
-    path: '',
+    path: '/',
     icon: '',
   },
   {

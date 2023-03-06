@@ -2,7 +2,7 @@
   <div class="app-layout-index">
     <div class="app-header-box"></div>
 
-    <div class="app-body-box daq-fl">
+    <div class="app-body-box app-fl">
       <div class="app-body-box__sidebar-box">
         <div class="app-body-box__sidebar-box--is-collapse">
           <!-- 收缩/展开 -->

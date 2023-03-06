@@ -24,8 +24,15 @@ for (const [name, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(name, component);
 }
 
-app.use(router).use(pinia).use(ElementPlus, {
-  locale: zhCn,
-});
+// 路由切换进度条
+import nprogress from './plugin/nprogress';
+
+app
+  .use(router)
+  .use(pinia)
+  .use(ElementPlus, {
+    locale: zhCn,
+  })
+  .use(nprogress);
 
 app.mount('#app');

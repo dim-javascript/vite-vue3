@@ -13,6 +13,7 @@
     "@element-plus/icons-vue": "^2.0.10",
     "element-plus": "^2.2.29",
     "lodash": "^4.17.21",
+    "nprogress": "^0.2.0",
     "pinia": "^2.0.30",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
