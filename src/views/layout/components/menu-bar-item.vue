@@ -7,6 +7,11 @@
       :index="menuItem[indexKey] || menuItem.id"
     >
       <template #title>
+        <template v-if="menuItem.icon">
+          <el-icon :size="22">
+            <component :is="menuItem.icon"></component>
+          </el-icon>
+        </template>
         <span>{{ menuItem.name }}</span>
       </template>
 
@@ -21,6 +26,11 @@
 
     <!-- 菜单项目 -->
     <el-menu-item v-else :index="menuItem[indexKey] || menuItem.id">
+      <template v-if="menuItem.icon">
+        <el-icon :size="22">
+          <component :is="menuItem.icon"></component>
+        </el-icon>
+      </template>
       <template #title>
         <span>{{ menuItem.name }}</span>
       </template>

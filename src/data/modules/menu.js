@@ -8,11 +8,11 @@ const menuList = [
   {
     name: '首页',
     path: '/',
-    icon: '',
+    icon: 'HomeFilled',
   },
   {
     name: '事例页面',
-    icon: '',
+    icon: 'List',
     children: [
       {
         name: '页面1',
