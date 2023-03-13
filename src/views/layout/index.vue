@@ -16,6 +16,7 @@
         <el-menu
           :router="true"
           :collapse="isCollapse"
+          :default-active="activeMenu"
           class="custom-menu-cls custom-menu-bg-cls"
           :unique-opened="true"
         >
@@ -48,13 +49,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { menu } from '@/data/index.js';
 import MenuBarItem from './components/menu-bar-item.vue';
 
 const isCollapse = ref(false);
 const menuList = ref([]);
 menuList.value = menu.menuList;
+
+// 当前路由选中的菜单项
+const route = useRoute();
+const activeMenu = computed(() => {
+  return route.path;
+});
 
 function getMsg(data) {
   console.log('data', data);
